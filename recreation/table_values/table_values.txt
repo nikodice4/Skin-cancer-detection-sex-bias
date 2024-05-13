@@ -1,0 +1,29 @@
+Means for lr:
+acc_female: 0.682
+acc_male: 0.684
+auroc_female: 0.745
+auroc_male: 0.727
+precision: 0.666
+recall: 0.743
+f1: 0.701
+Means for cnn:
+acc_female: 0.6496153846153847
+acc_male: 0.6873076923076923
+auroc_female: 0.7157544378698226
+auroc_male: 0.7580917159763314
+precision: 0.6547304134011537
+recall: 0.7634615384615386
+f1: 0.6888262414974087
+P-values:
+CNN ACC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=755.5, pvalue=0.0006144153945033599)
+CNN AUROC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=755.5, pvalue=0.0006144153945033599)
+LR ACC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=7744.0, pvalue=0.9049652564134502)
+LR AUROC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=7744.0, pvalue=0.9049652564134502)
+CNN Female ACC p-value with t-test 0.03966813202001558
+CNN Male ACC p-value with t-test 0.47217704339834243
+CNN Female AUROC p-value with t-test 0.337437393578936
+CNN Male AUROC p-value with t-test 0.6674101781956714
+LR Female ACC p-value with t-test 0.10393077767095017
+LR Male ACC p-value with t-test 0.1481057263573534
+LR Female AUROC p-value with t-test 0.47738682520917886
+LR Male AUROC p-value with t-test 0.15807477096365946

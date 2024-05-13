@@ -1,0 +1,5 @@
+,patient_id,lesion_id,smoke,drink,background_father,background_mother,age,pesticide,gender,skin_cancer_history,cancer_history,has_piped_water,has_sewage_system,fitspatrick,region,diameter_1,diameter_2,diagnostic,itch,grew,hurt,changed,bleed,elevation,img_id,biopsed
+1305,PAT_32,44,False,True,POLAND,POLAND,64,False,FEMALE,True,True,True,True,2.0,FACE,7.0,5.0,BCC,False,UNK,False,UNK,False,True,PAT_32_44_211.png,True
+171,PAT_34,47,False,False,GERMANY,GERMANY,69,False,MALE,False,False,False,False,2.0,CHEST,10.0,9.0,BCC,True,UNK,True,UNK,True,True,PAT_34_47_108.png,True
+1840,PAT_38,53,False,False,GERMANY,GERMANY,52,True,MALE,True,True,True,False,1.0,NOSE,7.0,7.0,BCC,True,True,True,False,True,True,PAT_38_53_198.png,True
+14,PAT_38,54,False,False,GERMANY,GERMANY,52,True,MALE,True,True,True,False,1.0,THIGH,14.0,12.0,BCC,True,False,False,False,False,False,PAT_38_54_234.png,True
