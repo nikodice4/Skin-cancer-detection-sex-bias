@@ -1,0 +1,18 @@
+Python is needed as well as the following libraries:
+
+- os
+- shutil
+- numpy
+- pandas (v. 2.2.0)
+- matplotlib.pyplot
+- seaborn
+- PIL
+- cv2
+- skimage
+- sklean
+- scipy
+- statistics
+- statsmodels
+- torch
+- torchvision
+- mlflow
