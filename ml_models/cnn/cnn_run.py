@@ -13,7 +13,7 @@ print(f"Using device: {device}")
 
 
 def generate_file_pairs(base_path="data/cnn/cnn_splitted_data_once_augmented",
-                        test_sets=1, variations=["0.00", "0.25", "0.50", "0.75", "1.00"], train_val_pairs=5):
+                        test_sets=2, variations=["0.00", "0.25", "0.50", "0.75", "1.00"], train_val_pairs=5):
     # Here we create a dictionary that contains all 3 files. We call them triples
     all_triples = {}
     base_path = "data/cnn/cnn_splitted_data_once_augmented"
@@ -126,11 +126,11 @@ def train_and_evaluate_model(file_triples):
                 mlflow.pytorch.log_model(cnn, "cnn")
 
     results_df = pd.DataFrame(results)
-    results_df.to_csv("data/results/cnn_results/quick_test.csv", index=False)
+    results_df.to_csv("data/results/cnn_results/cnn_result_last_run.csv", index=False)
     return results_df
 
 if __name__ == "__main__":
-    mlflow.set_tracking_uri("http://127.0.0.1:5050")
+    mlflow.set_tracking_uri("http://127.0.0.1:5052")
     mlflow.set_experiment("CNN_Augmented")
     base_path = "data/cnn/cnn_splitted_data_once_augmented"
     all_file_triples = generate_file_pairs(base_path=base_path)

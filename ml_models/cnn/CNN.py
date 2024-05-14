@@ -46,7 +46,7 @@ def resnet50(train_csv, val_csv, test_csv, img_directory):
 
     # Here we train the model
     # We squeeze the outputs to match the shape of the labels, and ensure that the labels are floats
-    num_epochs = 1
+    num_epochs = 10
     for epoch in range(num_epochs):
         weighted_model.train()
         for inputs, labels in train_loader:
