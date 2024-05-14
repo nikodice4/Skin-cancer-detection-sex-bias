@@ -1,19 +1,19 @@
 Means for lr:
-acc_female: 0.682
-acc_male: 0.684
-auroc_female: 0.745
-auroc_male: 0.727
-precision: 0.666
-recall: 0.743
-f1: 0.701
+acc_female: 0.682 ± 0.059
+acc_male: 0.684 ± 0.080
+auroc_female: 0.745 ± 0.052
+auroc_male: 0.727 ± 0.081
+precision: 0.666 ± 0.052
+recall: 0.743 ± 0.069
+f1: 0.701 ± 0.047
 Means for cnn:
-acc_female: 0.6496153846153847
-acc_male: 0.6873076923076923
-auroc_female: 0.7157544378698226
-auroc_male: 0.7580917159763314
-precision: 0.6547304134011537
-recall: 0.7634615384615386
-f1: 0.6888262414974087
+acc_female: 0.650 ± 0.057
+acc_male: 0.687 ± 0.053
+auroc_female: 0.716 ± 0.075
+auroc_male: 0.758 ± 0.059
+precision: 0.655 ± 0.065
+recall: 0.763 ± 0.162
+f1: 0.689 ± 0.081
 P-values:
 CNN ACC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=755.5, pvalue=0.0006144153945033599)
 CNN AUROC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=755.5, pvalue=0.0006144153945033599)

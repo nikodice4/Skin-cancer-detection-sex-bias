@@ -77,7 +77,7 @@ def gen_plot_panel(x_var, y_var, data, min_jitter, max_jitter):
 
 def regression_plot_lr():
 
-    data = pd.read_csv('data/results/lr_results/lr_results_aug.csv')
+    data = pd.read_csv('data/results/lr_results/final_lr_results.csv')
     # Adjusted version of the plotting code to include Bonferroni correction and statistical details for both plots
 
     # Set up the subplot grid
@@ -202,20 +202,39 @@ def regression_plot_cnn():
     plt.savefig('recreation/figures/cnn_regression_plot.png')
 
 def mean_lr():
-    data_lr = pd.read_csv('data/results/lr_results/lr_results_aug.csv')
-    acc_female = round(data_lr["accuracy_female"].mean(), 3)
-    acc_male = round(data_lr["accuracy_male"].mean(), 3)
-    auroc_female = round(data_lr["auroc_female"].mean(), 3)
-    auroc_male = round(data_lr["auroc_male"].mean(), 3)
-    precision = round(data_lr["Precision"].mean(), 3)
-    recall = round(data_lr["Recall"].mean(), 3)
-    f1 = round(data_lr["F1-score"].mean(), 3)
+    data_lr = pd.read_csv("data/results/lr_results/final_lr_results.csv")
+    # Calling the mean
+    acc_female = data_lr["accuracy_female"].mean()
+    acc_male = data_lr["accuracy_male"].mean()
+    auroc_female = data_lr["auroc_female"].mean()
+    auroc_male = data_lr["auroc_male"].mean()
+    precision = data_lr["Precision"].mean()
+    recall = data_lr["Recall"].mean()
+    f1 = data_lr["F1-score"].mean()
 
-    print(f'acc_female: {acc_female}\nacc_male: {acc_male}\nauroc_female: {auroc_female}\nauroc_male: {auroc_male}\nprecision: {precision}\nrecall: {recall}\nf1: {f1}')
+    # Calculating the standard deviation
+    acc_female_std = data_lr["accuracy_female"].std()
+    acc_male_std = data_lr["accuracy_male"].std()
+    auroc_female_std = data_lr["auroc_female"].std()
+    auroc_male_std = data_lr["auroc_male"].std()
+    precision_std = data_lr["Precision"].std()
+    recall_std = data_lr["Recall"].std()
+    f1_std = data_lr["F1-score"].std()
 
-    return (f'acc_female: {acc_female}\nacc_male: {acc_male}\nauroc_female: {auroc_female}\nauroc_male: {auroc_male}\nprecision: {precision}\nrecall: {recall}\nf1: {f1}')
- 
+    form_acc_female  = f"{acc_female:.3f} ± {acc_female_std:.3f}"
+    form_acc_male = f"{acc_male:.3f} ± {acc_male_std:.3f}"
+    form_auroc_female = f"{auroc_female:.3f} ± {auroc_female_std:.3f}"
+    form_auroc_male = f"{auroc_male:.3f} ± {auroc_male_std:.3f}"
+    form_precision = f"{precision:.3f} ± {precision_std:.3f}"
+    form_recall = f"{recall:.3f} ± {recall_std:.3f}"
+    form_f1 = f"{f1:.3f} ± {f1_std:.3f}"
+
+    print(f'acc_female: {form_acc_female}\nacc_male: {form_acc_male}\nauroc_female: {form_auroc_female}\nauroc_male: {form_auroc_male}\nprecision: {form_precision}\nrecall: {form_recall}\nf1: {form_f1}')
+    return (f'acc_female: {form_acc_female}\nacc_male: {form_acc_male}\nauroc_female: {form_auroc_female}\nauroc_male: {form_auroc_male}\nprecision: {form_precision}\nrecall: {form_recall}\nf1: {form_f1}')
+
+
 def mean_cnn():
+    # Calculating the mean
     data_cnn = pd.read_csv("data/results/cnn_results/runs-2-1.csv")
     data_cnn = data_cnn.drop(columns=["Start Time", "Duration", "Run ID", "Name", "Source Type", "Source Name", "User", "Status"])
     acc_female = data_cnn["Accuracy_female"].mean()
@@ -226,8 +245,25 @@ def mean_cnn():
     recall = data_cnn["Recall"].mean()
     f1 = data_cnn["F1-score"].mean()
 
-    print(f'acc_female: {acc_female}\nacc_male: {acc_male}\nauroc_female: {auroc_female}\nauroc_male: {auroc_male}\nprecision: {precision}\nrecall: {recall}\nf1: {f1}')
-    return (f'acc_female: {acc_female}\nacc_male: {acc_male}\nauroc_female: {auroc_female}\nauroc_male: {auroc_male}\nprecision: {precision}\nrecall: {recall}\nf1: {f1}')
+    # Calculating the standard deviation
+    acc_female_std = data_cnn["Accuracy_female"].std()
+    acc_male_std = data_cnn["Accuracy_male"].std()
+    auroc_female_std = data_cnn["ROC_female"].std()
+    auroc_male_std = data_cnn["ROC_male"].std()
+    precision_std = data_cnn["Precision"].std()
+    recall_std = data_cnn["Recall"].std()
+    f1_std = data_cnn["F1-score"].std()
+
+    form_acc_female  = f"{acc_female:.3f} ± {acc_female_std:.3f}"
+    form_acc_male = f"{acc_male:.3f} ± {acc_male_std:.3f}"
+    form_auroc_female = f"{auroc_female:.3f} ± {auroc_female_std:.3f}"
+    form_auroc_male = f"{auroc_male:.3f} ± {auroc_male_std:.3f}"
+    form_precision = f"{precision:.3f} ± {precision_std:.3f}"
+    form_recall = f"{recall:.3f} ± {recall_std:.3f}"
+    form_f1 = f"{f1:.3f} ± {f1_std:.3f}"
+
+    print(f'acc_female: {form_acc_female}\nacc_male: {form_acc_male}\nauroc_female: {form_auroc_female}\nauroc_male: {form_auroc_male}\nprecision: {form_precision}\nrecall: {form_recall}\nf1: {form_f1}')
+    return (f'acc_female: {form_acc_female}\nacc_male: {form_acc_male}\nauroc_female: {form_auroc_female}\nauroc_male: {form_auroc_male}\nprecision: {form_precision}\nrecall: {form_recall}\nf1: {form_f1}')
 
 def get_p_value_mannwhitneyu(df, name):
     mwu_result_acc = mannwhitneyu(df["accuracy_female"], df["accuracy_male"], alternative="two-sided")
@@ -295,7 +331,7 @@ def get_p_value_ttest_CNN(df, name):
 
 def p_values():
     data_CNN = pd.read_csv('data/results/cnn_results/model_training_results_cnn_5_10may_R.csv')
-    data_LR = pd.read_csv('data/results/lr_results/lr_results_aug.csv')
+    data_LR = pd.read_csv('data/results/lr_results/final_lr_results.csv')
     cnn_mannwhitney_p_value = get_p_value_mannwhitneyu(data_CNN, 'CNN')
     lr_mannwhitney_p_value = get_p_value_mannwhitneyu(data_LR, 'LR')
     cnn_ttest_p_value = get_p_value_ttest_CNN(data_CNN, 'CNN')
@@ -303,12 +339,35 @@ def p_values():
 
     return (f'{cnn_mannwhitney_p_value}\n{lr_mannwhitney_p_value}\n{cnn_ttest_p_value}\n{lr_ttest_p_value}')
 
+def fitzpatrick_distribution():
+    df = pd.read_csv('data/metadata/fixed_metadata.csv', index_col=0)
+    df = df[~df["gender"].isna()]
+    df = df.drop_duplicates("lesion_id", keep = "first")
+    fitzpatrick_counts = df.groupby("fitspatrick").size().reset_index(name="count")
+    sns.set_style("whitegrid")
+    plt.figure(figsize=(10, 6))
+    plot = sns.barplot(data=fitzpatrick_counts, x="fitspatrick", y="count", palette="flare")
+    plt.title("Distribution of the Fitzpatrick scale", fontsize=15)
+    plt.xlabel("Fitzpatrick scale", fontsize=13)
+    plt.ylabel("Frequency", fontsize=13)
 
+    for p in plot.patches:
+        height = p.get_height()
+        plt.annotate(f'{height:.0f}',
+                    xy=(p.get_x() + p.get_width() / 2, height),
+                    xytext=(0, 3),
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+    plt.ylim(0, 750)
+    plt.tight_layout() 
+    plt.savefig("recreation/figures/fitzpatrick_distribution.png", dpi=300, format="png", bbox_inches="tight")
 
 if __name__ == "__main__":
-    diagnosis_distribution = create_diagnosis_dist()
-    lr_plot = regression_plot_lr()
-    cnn_plot = regression_plot_cnn()
+    create_diagnosis_dist()
+    regression_plot_lr()
+    regression_plot_cnn()
+    fitzpatrick_distribution()
     mean_lr = mean_lr()
     mean_cnn = mean_cnn()
     p_values = p_values()
