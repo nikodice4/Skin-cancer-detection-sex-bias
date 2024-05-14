@@ -5,7 +5,7 @@ This repository contains the code produced in the making of the bachelor project
 Included are the implementations of:
 - Extracting features from images
 - Augmenting images
-- Spliting data into test/val/training
+- Splitting data into test/training/val
 - Training a logistic regression and convultional neural network
 - Providing statistical analysis of the results
 
