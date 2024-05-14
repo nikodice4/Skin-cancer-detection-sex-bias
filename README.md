@@ -75,13 +75,16 @@ Then run the script.
 - **LR:** Do the same as above but in 'ml_models/lr/lr_run.py'.
 
 ### 3: Analyse data
-
+- Run everything in 'analysis/plots/plot_cnn_regression.ipynb'
+- Run everything in 'analysis/plots/plot_lr_regression.ipynb'
+- Run everything in 'analysis/plots/significant_testing.ipynb'
+- Outputs can be found collected in 'analysis/plots/cm_plots', 'analysis/plots/cnn_plots' & 'analysis/plots/lr_plots'
 
 
 ## Acknowledgements
 
 - Dataset provided by [Pad-Ufes-20](https://data.mendeley.com/datasets/zr7vgbcyr2/1) [CC BY License](https://creativecommons.org/licenses/by/4.0/). Certain manual changes have been made by us to the dataset.
-- Inspiration for project, datasplit and more provided by Petersen et al., MICCAI 2022 [Feature robustness and sex differences in medical imaging: a case study in MRI-based Alzheimer's disease detection](https://link.springer.com/chapter/10.1007/978-3-031-16431-6_9). [Github](https://github.com/e-pet/adni-bias)
+- Inspiration for project, datasplit and more provided by Petersen et al., MICCAI 2022 [Feature robustness and sex differences in medical imaging: a case study in MRI-based Alzheimer's disease detection](https://link.springer.com/chapter/10.1007/978-3-031-16431-6_9). [Github](https://github.com/e-pet/adni-bias).
 - Feature extraction was gathered from anonymized first-year students from the IT-University of Copenhagen. Contact Veronika Cheplygina for further enquiries.
 ## License
 
