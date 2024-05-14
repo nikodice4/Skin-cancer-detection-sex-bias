@@ -79,6 +79,9 @@ Then run the script.
 
 ## Acknowledgements
 
+- Dataset provided by [Pad-Ufes-20](https://data.mendeley.com/datasets/zr7vgbcyr2/1) [CC BY License](https://creativecommons.org/licenses/by/4.0/). Certain manual changes have been made by us to the dataset.
+- Inspiration for project, datasplit and more provided by Petersen et al., MICCAI 2022 [Feature robustness and sex differences in medical imaging: a case study in MRI-based Alzheimer's disease detection](https://link.springer.com/chapter/10.1007/978-3-031-16431-6_9). [Github](https://github.com/e-pet/adni-bias)
+- Feature extraction was gathered from anonymized first-year students from the IT-University of Copenhagen. Contact Veronika Cheplygina for further enquiries.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
