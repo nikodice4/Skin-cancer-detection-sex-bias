@@ -140,7 +140,7 @@ def regression_plot_lr():
 
 def regression_plot_cnn():
 
-    data = pd.read_csv('data/results/cnn_results/model_training_results_cnn_5_10may_R.csv')
+    data = pd.read_csv('data/results/cnn_results/cnn_result_last_run.csv')
     # Adjusted version of the plotting code to include Bonferroni correction and statistical details for both plots
 
     # Set up the subplot grid
@@ -166,7 +166,7 @@ def regression_plot_cnn():
     plt.sca(ax1)
     df_for_plot = data.copy()
     df_for_plot['variation_hue'] = df_for_plot['variation']
-    gen_plot_panel(x_var='variation', y_var='ROC_male', data=df_for_plot, min_jitter=-0.05, max_jitter=0.05)
+    gen_plot_panel(x_var='variation', y_var='auroc_male', data=df_for_plot, min_jitter=-0.05, max_jitter=0.05)
     plt.xticks(ticks=np.linspace(0, data['variation'].max(), num=5))  # Adjust spacing between ticks
 
     ax1.set_xlabel('')
@@ -188,7 +188,7 @@ def regression_plot_cnn():
     plt.sca(ax3)
     df_for_plot = data.copy()
     df_for_plot['variation_hue'] = df_for_plot['variation']
-    gen_plot_panel(x_var='variation', y_var='ROC_male', data=df_for_plot, min_jitter=-0.05, max_jitter=0.05)
+    gen_plot_panel(x_var='variation', y_var='auroc_male', data=df_for_plot, min_jitter=-0.05, max_jitter=0.05)
     plt.xticks(ticks=np.linspace(0, data['variation'].max(), num=5))  # Adjust spacing between ticks
 
     ax3.set_xlabel('Ratios')
@@ -235,21 +235,20 @@ def mean_lr():
 
 def mean_cnn():
     # Calculating the mean
-    data_cnn = pd.read_csv("data/results/cnn_results/runs-2-1.csv")
-    data_cnn = data_cnn.drop(columns=["Start Time", "Duration", "Run ID", "Name", "Source Type", "Source Name", "User", "Status"])
-    acc_female = data_cnn["Accuracy_female"].mean()
-    acc_male = data_cnn["Accuracy_male"].mean()
-    auroc_female = data_cnn["ROC_female"].mean()
-    auroc_male = data_cnn["ROC_male"].mean()
+    data_cnn = pd.read_csv("data/results/cnn_results/cnn_result_last_run.csv")
+    acc_female = data_cnn["accuracy_female"].mean()
+    acc_male = data_cnn["accuracy_male"].mean()
+    auroc_female = data_cnn["auroc_female"].mean()
+    auroc_male = data_cnn["auroc_male"].mean()
     precision = data_cnn["Precision"].mean()
     recall = data_cnn["Recall"].mean()
     f1 = data_cnn["F1-score"].mean()
 
     # Calculating the standard deviation
-    acc_female_std = data_cnn["Accuracy_female"].std()
-    acc_male_std = data_cnn["Accuracy_male"].std()
-    auroc_female_std = data_cnn["ROC_female"].std()
-    auroc_male_std = data_cnn["ROC_male"].std()
+    acc_female_std = data_cnn["accuracy_female"].std()
+    acc_male_std = data_cnn["accuracy_male"].std()
+    auroc_female_std = data_cnn["auroc_female"].std()
+    auroc_male_std = data_cnn["auroc_male"].std()
     precision_std = data_cnn["Precision"].std()
     recall_std = data_cnn["Recall"].std()
     f1_std = data_cnn["F1-score"].std()
@@ -267,7 +266,7 @@ def mean_cnn():
 
 def get_p_value_mannwhitneyu(df, name):
     mwu_result_acc = mannwhitneyu(df["accuracy_female"], df["accuracy_male"], alternative="two-sided")
-    mwu_result_auroc = mannwhitneyu(df["accuracy_female"], df["accuracy_male"], alternative="two-sided")
+    mwu_result_auroc = mannwhitneyu(df["auroc_female"], df["auroc_male"], alternative="two-sided")
     print(f'{name} ACC mean f&m p-value with mannwhitneyu: {mwu_result_acc}')
     print(f'{name} AUROC mean f&m p-value with mannwhitneyu: {mwu_result_auroc}')
 
@@ -309,17 +308,17 @@ def get_p_value_ttest_CNN(df, name):
     mdl_m_ACC = ols(formula='variation ~ accuracy_male', data=df)
     results_m_ACC = mdl_m_ACC.fit()
 
-    mdl_f_AUROC = ols(formula='variation ~ ROC_female', data=df)
+    mdl_f_AUROC = ols(formula='variation ~ auroc_female', data=df)
     results_f_AUROC = mdl_f_AUROC.fit()
 
-    mdl_m_AUROC = ols(formula='variation ~ ROC_male', data=df)
+    mdl_m_AUROC = ols(formula='variation ~ auroc_male', data=df)
     results_m_AUROC = mdl_m_AUROC.fit()
     # Accessing parameters, standard errors, and p-values by index can lead to errors if the formula changes
     # So, use the column name to make it more robust
     p_value_female_ACC = results_f_ACC.pvalues['accuracy_female']
     p_value_male_ACC = results_m_ACC.pvalues['accuracy_male']
-    p_value_female_AUROC = results_f_AUROC.pvalues['ROC_female']
-    p_value_male_AUROC = results_m_AUROC.pvalues['ROC_male']
+    p_value_female_AUROC = results_f_AUROC.pvalues['auroc_female']
+    p_value_male_AUROC = results_m_AUROC.pvalues['auroc_male']
 
 
     print(f'{name} Female ACC p-value with t-test {p_value_female_ACC}')
@@ -330,7 +329,7 @@ def get_p_value_ttest_CNN(df, name):
     return (f'{name} Female ACC p-value with t-test {p_value_female_ACC}\n{name} Male ACC p-value with t-test {p_value_male_ACC}\n{name} Female AUROC p-value with t-test {p_value_female_AUROC}\n{name} Male AUROC p-value with t-test {p_value_male_AUROC}')
 
 def p_values():
-    data_CNN = pd.read_csv('data/results/cnn_results/model_training_results_cnn_5_10may_R.csv')
+    data_CNN = pd.read_csv('data/results/cnn_results/cnn_result_last_run.csv')
     data_LR = pd.read_csv('data/results/lr_results/final_lr_results.csv')
     cnn_mannwhitney_p_value = get_p_value_mannwhitneyu(data_CNN, 'CNN')
     lr_mannwhitney_p_value = get_p_value_mannwhitneyu(data_LR, 'LR')

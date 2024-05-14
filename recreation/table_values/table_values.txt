@@ -16,9 +16,9 @@ recall: 0.763 ± 0.162
 f1: 0.689 ± 0.081
 P-values:
 CNN ACC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=755.5, pvalue=0.0006144153945033599)
-CNN AUROC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=755.5, pvalue=0.0006144153945033599)
+CNN AUROC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=860.0, pvalue=0.0072446396237751684)
 LR ACC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=7744.0, pvalue=0.9049652564134502)
-LR AUROC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=7744.0, pvalue=0.9049652564134502)
+LR AUROC mean f&m p-value with mannwhitneyu: MannwhitneyuResult(statistic=8515.0, pvalue=0.2194447483138745)
 CNN Female ACC p-value with t-test 0.03966813202001558
 CNN Male ACC p-value with t-test 0.47217704339834243
 CNN Female AUROC p-value with t-test 0.337437393578936
