@@ -7,7 +7,13 @@ Included are the implementations of:
 - Augmenting images
 - Spliting data into test/val/training
 - Training a logistic regression and convultional neural network
-- Providing data and plots
+- Providing statistical analysis of the results
+
+Also included are:
+- Images and metadata from PAD-ufes-20, as well as masks and metadata fixed.
+- All of the extracted features 
+- Results
+- A script to quickly recreate our results
 
 ## Installation
 
@@ -22,11 +28,11 @@ Libraries needed to reproduce our experiments: [^1]
 - numpy
 - pandas
 
-# Visualization libraries
+### Visualization libraries
 - matplotlib.pyplot
 - seaborn
 
-# Image processing and machine learning libraries
+### Image processing and machine learning libraries
 - PIL
 - cv2
 - skimage
@@ -34,15 +40,33 @@ Libraries needed to reproduce our experiments: [^1]
 - scipy
 - statistics
 
-# Statistical modeling and metrics
+### Statistical modeling and metrics
 - statsmodels
 
-# PyTorch for deep learning
+### PyTorch for deep learning
 - torch
 - torchvision
 
-# MLflow for model tracking
+### MLflow for model tracking
 - mlflow
+
+## Recreation
+
+In order to quickly recreate some of our results, a script is provided in the 'recreation' directory. This will output data used in our tables to a txt file, stored in 'recreation/table_values', and figures as png-files to 'recreation/figures'. It is recommended to run this script with the data already provided, or after running the ML-models yourself.
+
+In order to recreate all of our experiments from scratch, only the data in 'data/images/lesion_images', 'data/images/lesion_masks' and 'data/metadata/fixed_metadata' are required. These are either manually created, or provided by Pad-Ufes-20 and then manually corrected by us.
+
+### 0 Data exploration
+
+Various curiosities and data we have had a need for can be extracting using the various scripts and notebooks in 'exploration'. This is not needed to recreate the experiments, but could be of interest.
+
+### 1 Create additional data metadata and split data for ML models [^2]
+[^2]: Note that this is computionally heavy and not recommended, when everything already is in this repository
+1. Run everything in 'split/cnn_split.ipynb'. This will create the augmented images, metadata for these. Furthermore it will split csv files into two directories 'data/cnn/cnn_splitted_data_once_augmented' and 'data/cnn/cnn_splitted_data_50_50_split'. The difference between these are how much data is augmented. We have elected to proceed exclusively with once augmented, but in future works it could be interesting to experiment with 50/50. 
+2. Now run everything in 'split/feature_extractions.ipynb'. This will create metadata files with all features for both the *clean* metadata and the one with augmentations.
+3. Split the data for the logistic regression by running everything in 'split/lr_split_aug.ipynb'.
+### 3 Run ML models
+### 4 Analyse data
 
 
 
