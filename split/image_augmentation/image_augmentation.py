@@ -116,8 +116,8 @@ def balance_dataset(df, feature):
         sampled_data_50_50 = sample50_50(df_augmented, counts[0], counts[1]) # sample for images the minimum needed to balance the dataset to 50/50
         image_ids_50_50 = sampled_data_50_50['img_id'].tolist()
 
-        # augment_images_once(image_ids_once)
-        # augment_images_50_50(image_ids_50_50)
+        augment_images_once(image_ids_once)
+        augment_images_50_50(image_ids_50_50)
         final_df_once_augmented = modify_dataframe_once(df, image_ids_once)
         final_df_50_50 = modify_dataframe_50_50(df, image_ids_50_50)
 
