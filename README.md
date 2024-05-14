@@ -56,17 +56,24 @@ In order to quickly recreate some of our results, a script is provided in the 'r
 
 In order to recreate all of our experiments from scratch, only the data in 'data/images/lesion_images', 'data/images/lesion_masks' and 'data/metadata/fixed_metadata' are required. These are either manually created, or provided by Pad-Ufes-20 and then manually corrected by us.
 
-### 0 Data exploration
+### 0: Data exploration
 
 Various curiosities and data we have had a need for can be extracting using the various scripts and notebooks in 'exploration'. This is not needed to recreate the experiments, but could be of interest.
 
-### 1 Create additional data metadata and split data for ML models [^2]
+### 1: Create additional data metadata and split data for ML models [^2]
 [^2]: Note that this is computionally heavy and not recommended, when everything already is in this repository
 1. Run everything in 'split/cnn_split.ipynb'. This will create the augmented images, metadata for these. Furthermore it will split csv files into two directories 'data/cnn/cnn_splitted_data_once_augmented' and 'data/cnn/cnn_splitted_data_50_50_split'. The difference between these are how much data is augmented. We have elected to proceed exclusively with once augmented, but in future works it could be interesting to experiment with 50/50. 
 2. Now run everything in 'split/feature_extractions.ipynb'. This will create metadata files with all features for both the *clean* metadata and the one with augmentations.
 3. Split the data for the logistic regression by running everything in 'split/lr_split_aug.ipynb'.
-### 3 Run ML models
-### 4 Analyse data
+### 2: Run ML models
+- **CNN:** Navigate to 'ml_models/cnn/cnn_run.py'. Before running, change to port of your choice at the bottom of the script. Then start mlflow by running the following command in your terminal:
+```bash
+mlflow ui -p <insert-port>
+```
+Then run the script.
+- **LR:** Do the same as above but in 'ml_models/lr/lr_run.py'.
+
+### 3: Analyse data
 
 
 
