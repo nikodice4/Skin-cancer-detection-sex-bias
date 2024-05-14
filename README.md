@@ -6,7 +6,7 @@ Included are the implementations of:
 - Extracting features from images
 - Augmenting images
 - Splitting data into test/training/val
-- Training a logistic regression and convultional neural network
+- Training a logistic regression and convolutional neural network
 - Providing statistical analysis of the results
 
 Also included are:
