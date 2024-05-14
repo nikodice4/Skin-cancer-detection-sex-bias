@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/612070278784769174/50ea21c7373843e9b44347db38105298/artifacts
+end_time: 1715680179381
+entry_point_name: ''
+experiment_id: '612070278784769174'
+lifecycle_stage: active
+run_id: 50ea21c7373843e9b44347db38105298
+run_name: logistic_regression_118
+run_uuid: 50ea21c7373843e9b44347db38105298
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715680175863
+status: 3
+tags: []
+user_id: andre
