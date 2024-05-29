@@ -15,6 +15,7 @@
 * [Tuesday, 15th April 2024](#date-15th-april-2024)
 * [Tuesday, 30th April 2024](#date-30-April-2024)
 * [Tuesday, 7th May 2024](#date-7-May-2024)
+* [Tuesday, 14th May 2024](#date-14-May-2024)
 
 
 ### Date: 6th February 2024
@@ -622,4 +623,35 @@ colour, or both?
 * How should justify choosing the final features for the LR? A combination of feature imporatance and the distrubtion plots we have made?
   * ![image](https://github.itu.dk/storage/user/4277/files/290e6576-55d5-4b92-82d8-ea4065bb337c)
 * We want to write about all the considerations we have taken when splitting the data, considerations Petersen did not have to take, since we have a patient with mulitple lesions and such, because that has become a thing we have used a lot of time on, but is it releveant?
-   
+
+### Date: 14 May 2024
+
+* [Tuesday, May 2024](#date-14-May-2024)
+
+#### Who did you help this week?
+
+* Each other:)
+
+#### What helped you this week?
+
+* Our parents
+  
+#### What did you achieve?
+
+* We submitted the bachelors!!!
+  
+#### What did you struggle with?
+
+* Unexpected errors showed up Monday the 13th, because of bad internet when we were making the new final Github.
+  
+#### What would you like to work on next week?
+
+* The other upcoming exams
+
+#### Where do you need help from Veronika?
+
+* N/A
+  
+#### What are the agreements after this meeting? (to fill in after the meeting)
+
+* N/A

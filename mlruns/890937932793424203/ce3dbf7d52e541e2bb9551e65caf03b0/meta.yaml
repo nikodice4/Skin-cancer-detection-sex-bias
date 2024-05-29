@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/890937932793424203/ce3dbf7d52e541e2bb9551e65caf03b0/artifacts
+end_time: 1715652840045
+entry_point_name: ''
+experiment_id: '890937932793424203'
+lifecycle_stage: active
+run_id: ce3dbf7d52e541e2bb9551e65caf03b0
+run_name: cnn_2
+run_uuid: ce3dbf7d52e541e2bb9551e65caf03b0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715651536471
+status: 3
+tags: []
+user_id: regitzesydendal
