@@ -1,4 +1,4 @@
-# This script aims to recreate the plots and tables from the paper
+# This script aims to reproduce the plots and tables from the paper
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -47,7 +47,7 @@ def create_diagnosis_dist():
     sns.set_style("whitegrid")
     plt.tight_layout() 
 
-    plt.savefig('recreation/figures/diagnosis_distribution.png')
+    plt.savefig('reproducibility/figures/diagnosis_distribution.png')
 
 def gen_plot_panel(x_var, y_var, data, min_jitter, max_jitter):
     # Define the plotting function similar to 'gen_plot_panel' from https://github.com/e-pet/adni-bias/blob/main/analysis.py
@@ -136,7 +136,7 @@ def regression_plot_lr():
     plt.subplots_adjust(top=0.90)
     plt.suptitle('LR ACC & AUROC for female and male')
 
-    plt.savefig('recreation/figures/lr_regression_plot.png')
+    plt.savefig('reproducibility/figures/lr_regression_plot.png')
 
 def regression_plot_cnn():
 
@@ -199,7 +199,7 @@ def regression_plot_cnn():
     plt.subplots_adjust(top=0.90)
     plt.suptitle('CNN ACC & AUROC for female and male')
 
-    plt.savefig('recreation/figures/cnn_regression_plot.png')
+    plt.savefig('reproducibility/figures/cnn_regression_plot.png')
 
 def mean_lr():
     data_lr = pd.read_csv("data/results/lr_results/final_lr_results.csv")
@@ -360,7 +360,7 @@ def fitzpatrick_distribution():
 
     plt.ylim(0, 750)
     plt.tight_layout() 
-    plt.savefig("recreation/figures/fitzpatrick_distribution.png", dpi=300, format="png", bbox_inches="tight")
+    plt.savefig("reproducibility/figures/fitzpatrick_distribution.png", dpi=300, format="png", bbox_inches="tight")
 
 if __name__ == "__main__":
     create_diagnosis_dist()
@@ -371,5 +371,5 @@ if __name__ == "__main__":
     mean_cnn = mean_cnn()
     p_values = p_values()
 
-    with open("recreation/table_values/table_values.txt", "w") as text_file:
+    with open("reproducibility/table_values/table_values.txt", "w") as text_file:
         text_file.write(f"Means for lr:\n{mean_lr}\nMeans for cnn:\n{mean_cnn}\nP-values:\n{p_values}")
