@@ -1,6 +1,6 @@
 # A Comparative Study of Feature Robustness and Sex Bias in Logistic Regression and CNN for Skin Cancer Detection
 
-This repository contains the code produced in the making of the bachelor project [A Comparative Study of Feature Robustness and Sex Bias in Logistic Regression and CNN for Skin Cancer Detection](BSc_nizp_resy_lawu_2024.pdf), made by Nikolette Pedersen, Regitze Sydendal & Andreas Wulff.
+This repository contains the code produced in the making of the bachelor project: A Comparative Study of Feature Robustness and Sex Bias in Logistic Regression and CNN for Skin Cancer Detection, made by Nikolette Pedersen, Regitze Sydendal & Andreas Wulff.
 
 Included are the implementations of:
 - Extracting features from images
@@ -84,7 +84,7 @@ Then run the script.
 ## Acknowledgements
 
 - Dataset provided by [PAD-UFES-20](https://data.mendeley.com/datasets/zr7vgbcyr2/1) [CC BY License](https://creativecommons.org/licenses/by/4.0/). Certain manual changes have been made by us to the dataset.
-- Inspiration for project, datasplit and more provided by Petersen et al., MICCAI 2022 [Feature robustness and sex differences in medical imaging: a case study in MRI-based Alzheimer's disease detection](https://link.springer.com/chapter/10.1007/978-3-031-16431-6_9). [Github](https://github.com/e-pet/adni-bias).
+- Inspiration for project, datasplit and more provided by Petersen et al., MICCAI 2022 Feature robustness and sex differences in medical imaging: a case study in MRI-based Alzheimer's disease detection.
 - Feature extractions were gathered from anonymised first-year students from the IT-University of Copenhagen. Contact Veronika Cheplygina (vech@itu.dk) for further enquiries.
 ## License
 
