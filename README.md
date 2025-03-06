@@ -51,9 +51,9 @@ Libraries needed to reproduce our experiments: [^1]
 ### MLflow for model tracking
 - mlflow
 
-## Recreation
+## Reproducibility
 
-In order to quickly recreate some of our results, a script is provided in the `recreation` directory. This will output data used in our tables to a `.txt-file`, stored in `recreation/table_values`, and figures as png-files to `recreation/figures`. It is recommended to run this script with the data already provided, or after running the ML-models yourself.
+In order to quickly recreate some of our results, a script is provided in the `reproducibility` directory. This will output data used in our tables to a `.txt-file`, stored in `reproducibility/table_values`, and figures as png-files to `reproducibility/figures`. It is recommended to run this script with the data already provided, or after running the ML-models yourself.
 
 In order to recreate all of our experiments from scratch, only the data in `data/images/lesion_images`, `data/images/lesion_masks` and `data/metadata/fixed_metadata` are required. These are either manually created, or provided by PAD-UFES-20 and then manually corrected by us.
 
