@@ -21,14 +21,13 @@ The images and metadata from the PAD-UFES-20 dataset are required to recreate ou
 
 Python is needed.
 Libraries can be installed using the package manager [pip](https://pip.pypa.io/en/stable/). 
-Libraries needed to reproduce our experiments: [^1]
-[^1]: Disclaimer: It's possible that this list is not exhaustive
+Libraries needed to reproduce our experiments: [1]
 ### Standard libraries for data manipulation and OS operations
 - os
 - shutil
 - numpy
-- pandas (v. 2.2.0)[^2]
-[^2]: Pandas might be version-sensitive
+- pandas (v. 2.2.0) [2]
+
 ### Visualization libraries
 - matplotlib.pyplot
 - seaborn
@@ -61,8 +60,8 @@ In order to recreate all of our experiments from scratch, only the data in `data
 
 Various curiosities and data we have had a need for can be extracted using the various scripts and notebooks in `exploration`. This is not needed to recreate the experiments, but could be of interest.
 
-### 1: Create additional data, metadata and split data for ML models [^3]
-[^3]: Note that this is computionally heavy and not recommended, when everything already is in this repository
+### 1: Create additional data, metadata and split data for ML models [3]
+
 1. Run everything in `split/cnn_split.ipynb`. This will create the augmented images and metadata for these. Furthermore it will split .csv-files into two directories `data/cnn/cnn_splitted_data_once_augmented` and `data/cnn/cnn_splitted_data_50_50_split`. The difference between these are how much data is augmented. We have elected to proceed exclusively with "once augmented", but in future works it could be interesting to experiment with 50/50. 
 2. Now run everything in `split/feature_extractions.ipynb`. This will create metadata files with all features for both the *clean* metadata and the one with augmentations.
 3. Split the data for the LR by running everything in `split/lr_split_aug.ipynb`.
@@ -89,3 +88,7 @@ Then run the script.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+[1]: Disclaimer: It's possible that this list is not exhaustive
+[2]: Pandas might be version-sensitive
+[3]: Note that this is computionally heavy and not recommended, when everything already is in this repository
