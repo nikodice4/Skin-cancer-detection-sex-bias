@@ -1,6 +1,8 @@
-# A Comparative Study of Feature Robustness and Sex Bias in Logistic Regression and CNN for Skin Cancer Detection
+# Robustness and sex differences in skin cancer detection: logistic regression vs CNNs
 
-This repository contains the code produced in the making of the bachelor project: A Comparative Study of Feature Robustness and Sex Bias in Logistic Regression and CNN for Skin Cancer Detection, made by Nikolette Pedersen, Regitze Sydendal & Andreas Wulff.
+This repository contains the code produced in the making of the project: Robustness and sex differences in skin cancer detection: logistic regression vs CNNs, by  Nikolette Pedersen, Regitze Sydendal, Andreas Wulff, Ralf Raumanns, Eike Petersen, and Veronika Cheplygina.
+
+If you use this code in your academic work, please consider citing: Nikolette Pedersen, Regitze Sydendal, Andreas Wulff, Ralf Raumanns, Eike Petersen, and Veronika Cheplygina. https://arxiv.org/abs/2504.11415.
 
 Included are the implementations of:
 - Extracting features from images
